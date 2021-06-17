@@ -1,12 +1,3 @@
-
-- task: PowerShell@2
+- task: Bash@3
   inputs:
-    #targetType: 'filePath' # Optional. Options: filePath, inline
-    filePath: MyPS1.ps1
-    #arguments: # Optional
-    script: Write-Host 'Hello World' 
-    #errorActionPreference: 'stop' # Optional. Options: stop, continue, silentlyContinue
-    #failOnStderr: false # Optional
-    #ignoreLASTEXITCODE: false # Optional
-    #pwsh: false # Optional
-    #workingDirectory: # Optional
+    filePath: 'MyPS1.ps1'
