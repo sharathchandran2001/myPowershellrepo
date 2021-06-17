@@ -1,5 +1,12 @@
-- task: AzurePowerShell@5
+
+- task: PowerShell@2
   inputs:
-    ScriptType: 'FilePath'
-    ScriptPath: 'MyPS1.ps1'
-    azurePowerShellVersion: 'LatestVersion'
+    #targetType: 'filePath' # Optional. Options: filePath, inline
+    filePath: MyPS1.ps1
+    #arguments: # Optional
+    script: Write-Host 'Hello World' 
+    #errorActionPreference: 'stop' # Optional. Options: stop, continue, silentlyContinue
+    #failOnStderr: false # Optional
+    #ignoreLASTEXITCODE: false # Optional
+    #pwsh: false # Optional
+    #workingDirectory: # Optional
