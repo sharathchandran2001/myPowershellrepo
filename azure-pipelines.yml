@@ -1,10 +1,21 @@
 trigger:
 - main
 pool:
-  vmImage: "windows-latest"
+  vmImage: 'windows-latest'
+#steps:
+#    - task: AzurePowerShell@5
+#      inputs:
+#        ScriptType: 'FilePath'
+#        ScriptPath: 'myPS1.ps1'
+#        errorActionPreference: 'continue'
 steps:
-    - task: AzurePowerShell@5
-      inputs:
-        ScriptType: 'FilePath'
-        ScriptPath: 'myPS1.ps1'
-        errorActionPreference: 'continue'
+- task: PowerShell@2
+  displayName: 'Pester Tests'
+  inputs:
+    targetType: 'inline'
+    script: |
+      Find-Module Pester | Install-Module -Scope CurrentUser -Force
+      Import-Module Pester -Force
+      Invoke-Pester -Path '$(System.DefaultWorkingDirectory)/myPS1.ps1'
+      Write-Host "Hello World"
+    errorActionPreference: 'continue'
