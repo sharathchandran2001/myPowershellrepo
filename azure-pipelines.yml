@@ -1,16 +1,5 @@
-# Starter pipeline
-- task: PowerShell@2
+- task: AzureCLI@2
   inputs:
-    targetType: 'filePath'
-    filePath: $(System.DefaultWorkingDirectory)\MyPS1.ps1
-  displayName: 'Print Hello World'
-
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+    scriptType: 'ps'
+    scriptLocation: 'scriptPath'
+    scriptPath: 'MyPS1.ps1'
