@@ -1,3 +1,10 @@
-- task: Bash@3
+trigger:
+- main
+pool:
+  vmImage: "windows-latest"
+stpes:
+- task: AzurePowerShell@5
   inputs:
-    filePath: 'myPS1.ps1'
+    ScriptType: 'FilePath'
+    ScriptPath: 'myPS1.ps1'
+    errorActionPreference: 'continue'
