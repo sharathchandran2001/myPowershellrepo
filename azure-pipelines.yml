@@ -1,5 +1,5 @@
-- task: AzureCLI@2
+- task: AzurePowerShell@5
   inputs:
-    scriptType: 'ps'
-    scriptLocation: 'scriptPath'
-    scriptPath: 'MyPS1.ps1'
+    ScriptType: 'FilePath'
+    ScriptPath: 'MyPS1.ps1'
+    azurePowerShellVersion: 'LatestVersion'
