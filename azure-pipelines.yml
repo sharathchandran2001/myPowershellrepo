@@ -4,7 +4,7 @@ pool:
   vmImage: "windows-latest"
 steps:
     - task: AzurePowerShell@5
-    inputs:
-      ScriptType: 'FilePath'
-      ScriptPath: 'myPS1.ps1'
-      errorActionPreference: 'continue'
+      inputs:
+        ScriptType: 'FilePath'
+        ScriptPath: 'myPS1.ps1'
+        errorActionPreference: 'continue'
